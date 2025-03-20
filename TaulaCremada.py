@@ -1,3 +1,4 @@
+import math
 #Input
 marcas=int(input())
 casos=list()
@@ -17,10 +18,22 @@ def calculus(caso):
     for i in mesa:
         print(i)
     vectors=list()
+    slopes=list()
     for i in caso:
         vectors.append(list())
+        slopes.append(list())
         for j in caso:
             vectors[-1].append([i[k]-j[k] for k in range(2)])
+            div=math.gcd(vectors[-1][-1])
+            vectors[-1][-1][0]/=div
+            vectors[-1][-1][1]/=div
+            if vectors[-1][-1][0]<0:
+                vectors[-1][-1][0]*=-1
+                vectors[-1][-1][1]*=-1
+            if vectors[-1][-1][0]==0:
+                slope="vertical"
+            else:slope=vectors[-1][-1][1]/vectors[-1][-1][0]
+            slopes[-1].append(slope)
     condition=True
     if condition:
         return True
