@@ -5,11 +5,16 @@ for i in range(n_casos):
     casos.append(dict())
     casos[-1].update({"n_tiendas":int(input())})
     casos[-1].update({"tiendas":list()})
-    for i in range(casos[-1][n_tiendas]):
-        casos[-1]["tiendas"].append(input().split())
+    for j in range(casos[-1]["n_tiendas"]):
+        casos[-1]["tiendas"].append(dict())
+        casos[-1]["tiendas"][-1].update({"n_articulos":int(input())})
+        casos[-1]["tiendas"][-1].update({"articulos":list()})
+        for k in range(casos[-1]["tiendas"][-1]["n_articulos"]):
+            casos[-1]["tiendas"][-1]["articulos"].append()
+    print(casos[-1])
     casos[-1].update({"n_articulos":int(input())})
     casos[-1].update({"compras":list()})
-    for i in range(casos[-1]["n_articulos"]):
+    for j in range(casos[-1]["n_articulos"]):
         casos[-1]["compras"].append(input().split())
 precio=list()
 cantid=list()
